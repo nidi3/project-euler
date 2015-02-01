@@ -1,4 +1,4 @@
-from sieve import sieve, is_prime
+from primes import sieve, is_prime
 
 s = sieve(100000)
 

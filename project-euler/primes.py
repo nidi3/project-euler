@@ -26,3 +26,12 @@ def primes(s):
 
 
 def is_prime(s, n): return n % 2 == 1 and s[__num2index(n)]
+
+
+def is_prime(n):
+    from math import floor, sqrt
+
+    if n % 2 == 0: return False
+    for i in xrange(3, int(floor(sqrt(n))) + 1, 2):
+        if n % i == 0: return False
+    return True

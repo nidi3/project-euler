@@ -1,4 +1,4 @@
-import sieve
+import primes
 
-p = sieve.primes(sieve.sieve(120000))
+p = primes.primes(primes.sieve(120000))
 print p[10000]

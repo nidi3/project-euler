@@ -1,7 +1,7 @@
-import sieve
+import primes
 
 sum = 0
-p = sieve.primes(sieve.sieve(2000100))
+p = primes.primes(primes.sieve(2000100))
 i = 0
 while p[i] < 2000000:
     sum += p[i]
