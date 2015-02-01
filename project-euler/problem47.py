@@ -7,7 +7,6 @@ def distinct(a, b, c):
         if not x in b: d += 1
     return d >= c
 
-
 f1 = factors.prime_factors(1000)
 f2 = factors.prime_factors(1001)
 f3 = factors.prime_factors(1002)
