@@ -9,7 +9,7 @@ month = 1
 day = 1
 sundays = 0
 while year < 2001:
-    if year>=1901 and day == 0: sundays += 1
+    if year >= 1901 and day == 0: sundays += 1
     day = (day + len(year, month)) % 7
     if month < 12:
         month += 1

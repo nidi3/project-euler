@@ -1,4 +1,4 @@
-from strings import to_digit
+from strings import sum_digits
 
 
 def pow(a, n):
@@ -11,5 +11,5 @@ def pow(a, n):
     return s
 
 
-print reduce(lambda accu, v: accu + to_digit(v), str(pow(2, 1000)), 0)
+print sum_digits(str(pow(2, 1000)))
 
