@@ -20,7 +20,7 @@ def fill_rest(f, i):
         d[k] = f[k - i]
 
 
-def exchage(i, t):
+def exchange(i, t):
     f = d[i + 1:]
     d[i], f[t - i - 1] = f[t - i - 1], d[i]
     return f
@@ -29,7 +29,7 @@ def exchage(i, t):
 def next():
     i = pos_to_change()
     t = exchange_pos(i)
-    f = exchage(i, t)
+    f = exchange(i, t)
     fill_rest(f, i + 1)
 
 
