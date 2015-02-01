@@ -1,23 +1,16 @@
-def coord2Index(x, y): return x * 100 + y
+from maths import array
 
-
-def set(x, y, c): s[coord2Index(x, y)] = c
-
-
-def get(x, y): return s[coord2Index(x, y)]
-
-
-s = {}
-set(1, 0, 1)
-set(0, 1, 1)
-set(1, 1, 2)
+s = array(21, 21)
+s[1][0] = 1
+s[0][1] = 1
+s[1][1] = 2
 
 for d in xrange(2, 21):
-    set(0, d, get(0, d - 1))
-    set(d, 0, get(d - 1, 0))
+    s[0][d] = s[0][d - 1]
+    s[d][0] = s[d - 1][0]
     for n in xrange(1, d):
-        set(n, d, get(n, d - 1) + get(n - 1, d))
-        set(d, n, get(d - 1, n) + get(d, n - 1))
-    set(d, d, get(d - 1, d) + get(d, d - 1))
+        s[n][d] = s[n][d - 1] + s[n - 1][d]
+        s[d][n] = s[d - 1][n] + s[d][n - 1]
+    s[d][d] = s[d - 1][d] + s[d][d - 1]
 
-print get(20,20)
+print s[20][20]

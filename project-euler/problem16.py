@@ -1,4 +1,4 @@
-from string import to_digit
+from strings import to_digit
 
 
 def pow(a, n):

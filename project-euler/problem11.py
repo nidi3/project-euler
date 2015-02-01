@@ -1,3 +1,6 @@
+import strings
+from maths import max
+
 gs = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00
 81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65
@@ -19,25 +22,23 @@ gs = """08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08
 20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54
 01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48"""
 
-g = []
-for line in gs.split('\n'):
-    g.append(map(lambda x: int(x), line.split(' ')))
+g = strings.read_matrix(gs)
 width = len(g[0])
 height = len(g)
 
 
-def prod(max, f):
+def prod(m, f):
     v = 1
     for i in range(0, 4): v *= f(i)
-    return v if v > max else max
+    return max(m, v)
 
 
-max = 0
+m = 0
 for y in range(0, height):
     for x in range(0, width):
-        if x + 3 < width: max = prod(max, lambda i: g[y][x + i])
-        if y + 3 < height: max = prod(max, lambda i: g[y + i][x])
-        if y + 3 < height and x + 3 < width: max = prod(max, lambda i: g[y + i][x + i])
-        if y + 3 < height and x - 3 >= 0: max = prod(max, lambda i: g[y + i][x - i])
+        if x + 3 < width: m = prod(m, lambda i: g[y][x + i])
+        if y + 3 < height: m = prod(m, lambda i: g[y + i][x])
+        if y + 3 < height and x + 3 < width: m = prod(m, lambda i: g[y + i][x + i])
+        if y + 3 < height and x - 3 >= 0: m = prod(m, lambda i: g[y + i][x - i])
 
-print max
+print m
