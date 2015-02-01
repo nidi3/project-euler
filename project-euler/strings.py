@@ -9,3 +9,8 @@ def read_matrix(s):
 
 
 def sum_digits(s): return reduce(lambda accu, v: accu + to_digit(v), s, 0)
+
+
+def is_palindrom(n):
+    s = str(n)
+    return s == s[::-1]
