@@ -1,4 +1,4 @@
-from math import sqrt, floor
+from math import sqrt, floor, ceil
 
 
 def prime_factors(n):
@@ -18,7 +18,7 @@ def prime_factors(n):
 
 def factors(n):
     fs = []
-    s = int(floor(sqrt(n)))
+    s = int(ceil(sqrt(n)))
     if s == sqrt(n): fs.append(s)
     for i in xrange(1, s):
         if n % i == 0:
