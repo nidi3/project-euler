@@ -1,4 +1,4 @@
-def to_digit(s): return ord(s) - ord('0')
+def to_digit(s, zero='0'): return ord(s) - ord(zero)
 
 
 def read_matrix(s):
