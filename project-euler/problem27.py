@@ -1,4 +1,4 @@
-from primes import sieve, is_prime
+from primes import sieve, is_sieve_prime
 
 s = sieve(100000)
 
@@ -7,7 +7,7 @@ c = 0
 for a in xrange(-999, 1000):
     for b in xrange(-999, 1000):
         n = 0
-        while is_prime(s, n * n + a * n + b): n += 1
+        while is_sieve_prime(s, n * n + a * n + b): n += 1
         if n > m:
             m = n
             c = a * b

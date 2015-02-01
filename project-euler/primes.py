@@ -25,7 +25,7 @@ def primes(s):
     return r
 
 
-def is_prime(s, n): return n % 2 == 1 and s[__num2index(n)]
+def is_sieve_prime(s, n): return n % 2 == 1 and s[__num2index(n)]
 
 
 def is_prime(n):
