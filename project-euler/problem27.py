@@ -9,7 +9,6 @@ for a in xrange(-999, 1000):
         n = 0
         while is_prime(s, n * n + a * n + b): n += 1
         if n > m:
-            print n, a, b
             m = n
             c = a * b
 
