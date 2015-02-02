@@ -17,15 +17,16 @@ s = """75
 63 66 04 68 89 53 67 30 73 16 69 87 40 31
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23"""
 
-g = strings.read_matrix(s)
-size = len(g)
-s = array(size, size)
+def max_in_tringle(s):
+    g = strings.read_matrix(s)
+    size = len(g)
+    s = array(size, size)
 
-for i in xrange(size):
-    s[size - 1][i] = g[size - 1][i]
+    for i in xrange(size):
+        s[size - 1][i] = g[size - 1][i]
 
-for y in xrange(size - 2, -1, -1):
-    for x in xrange(0, y + 1):
-        s[y][x] = g[y][x] + max(s[y + 1][x], s[y + 1][x + 1])
+    for y in xrange(size - 2, -1, -1):
+        for x in xrange(0, y + 1):
+            s[y][x] = g[y][x] + max(s[y + 1][x], s[y + 1][x + 1])
 
-print s[0][0]
+    print s[0][0]
