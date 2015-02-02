@@ -19,3 +19,9 @@ def pythagorean_triple(max):
                 while k * (a + b + c) <= max:
                     yield k * a, k * b, k * c
                     k += 1
+
+
+def factorial(n):
+    f = 1
+    for i in xrange(2, n + 1): f *= i
+    return f

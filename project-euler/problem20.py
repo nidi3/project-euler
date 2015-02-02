@@ -1,10 +1,4 @@
 from strings import sum_digits
+from maths import factorial
 
-
-def fac(n):
-    f = 1
-    for i in xrange(2, n + 1): f *= i
-    return f
-
-
-print sum_digits(str(fac(100)))
+print sum_digits(str(factorial(100)))
