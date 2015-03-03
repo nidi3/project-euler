@@ -5,7 +5,7 @@ def prime_factors(n):
     def possible(n):
         yield 2
         s = int(floor(sqrt(n)))
-        for i in xrange(3, s, 2): yield i
+        for i in xrange(3, s + 1, 2): yield i
 
     fs = []
     for i in possible(n):
