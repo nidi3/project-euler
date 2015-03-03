@@ -38,3 +38,14 @@ def to_int(pd):
         i = 10 * i + e
 
     return i
+
+
+def is_pandigit(n):
+    if n < 123456789 or n > 987654321: return False
+    d = [False] * 10
+    while n > 0:
+        if d[n % 10]: return False
+        d[n % 10] = True
+        n /= 10
+
+    return not d[0]
