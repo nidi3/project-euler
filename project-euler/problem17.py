@@ -10,7 +10,7 @@ def to_word(n):
         return to_word(n / 1000) + ' ' + thousand + ('' if n % 1000 == 0 else ' ' + to_word(n % 1000))
     if n >= 100:
         return to_word(n / 100) + ' ' + hundred + ('' if n % 100 == 0 else ' and ' + to_word(n % 100))
-    if (n >= 20):
+    if n >= 20:
         return tens[n / 10 - 2] + ('' if n % 10 == 0 else '-' + to_word(n % 10))
     return ones[n]
 
