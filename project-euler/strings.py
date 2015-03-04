@@ -23,6 +23,7 @@ def digits_of(n):
         d[to_digit(c)] += 1
     return d
 
-def read_split(file):
+
+def read_split(file, sep=','):
     f = open(file, 'r')
-    return f.read().split(',')
+    return f.read().split(sep)
