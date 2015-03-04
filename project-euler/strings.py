@@ -22,3 +22,7 @@ def digits_of(n):
     for c in s:
         d[to_digit(c)] += 1
     return d
+
+def read_split(file):
+    f = open(file, 'r')
+    return f.read().split(',')

@@ -1,7 +1,6 @@
-from strings import to_digit
+from strings import to_digit, read_split
 
-f = open('p022_names.txt', 'r')
-names = f.read().split(',')
+names = read_split('p022_names.txt')
 names.sort()
 
 s = 0
