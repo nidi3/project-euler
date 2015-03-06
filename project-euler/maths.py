@@ -25,3 +25,11 @@ def factorial(n):
     f = 1
     for i in xrange(2, n + 1): f *= i
     return f
+
+
+def cont_fraction(n, start, coeff):
+    a = 1
+    b = coeff(n-1)
+    for x in xrange(n - 2, -1, -1):
+        a, b = b, a + coeff(x) * b
+    return [a + start * b, b]

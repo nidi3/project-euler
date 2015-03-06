@@ -19,10 +19,10 @@ def prime_factors(n):
 def factors(n):
     fs = []
     s = int(ceil(sqrt(n)))
-    if s == sqrt(n): fs.append(s)
     for i in xrange(1, s):
         if n % i == 0:
             fs.append(i)
             fs.append(n / i)
 
+    if s == sqrt(n): fs.append(s)
     return fs
