@@ -33,3 +33,16 @@ def cont_fraction(n, start, coeff):
     for x in xrange(n - 2, -1, -1):
         a, b = b, a + coeff(x) * b
     return [a + start * b, b]
+
+def choose(n, m):
+    if n == 0:
+        return []
+    if n == 1:
+        return [[x] for x in xrange(0, m)]
+    if n == m:
+        return [[x for x in xrange(0, m)]]
+    c = choose(n - 1, m - 1)
+    a = [[m - 1] + x for x in c]
+    b = choose(n, m - 1)
+    return a + b
+
