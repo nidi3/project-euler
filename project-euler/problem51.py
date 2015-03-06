@@ -1,23 +1,5 @@
 from primes import is_prime
-from maths import choose
-
-# s = sieve(10000000)
-
-
-def to_list(n):
-    l = []
-    while n > 0:
-        l.append(n % 10)
-        n /= 10
-    l.reverse()
-    return l
-
-
-def to_num(l):
-    v = 0
-    for e in l:
-        v = 10 * v + e
-    return v
+from maths import choose, to_list, to_num
 
 
 def replace(length, z, s):

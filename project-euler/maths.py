@@ -46,3 +46,17 @@ def choose(n, m):
     b = choose(n, m - 1)
     return a + b
 
+def to_list(n):
+    l = []
+    while n > 0:
+        l.append(n % 10)
+        n /= 10
+    l.reverse()
+    return l
+
+
+def to_num(l):
+    v = 0
+    for e in l:
+        v = 10 * v + e
+    return v
