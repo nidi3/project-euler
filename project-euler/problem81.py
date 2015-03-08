@@ -3,7 +3,7 @@ from maths import array
 
 raw = read_split('p081_matrix.txt', '\n')
 matrix = map(lambda line: map(lambda e: int(e), line.split(',')), raw)
-m = array(80,80)
+m = array(80, 80)
 
 m[79][79] = matrix[79][79]
 for s in xrange(78, -1, -1):
