@@ -27,13 +27,6 @@ def factorial(n):
     return f
 
 
-def cont_fraction(n, start, coeff):
-    a = 1
-    b = coeff(n-1)
-    for x in xrange(n - 2, -1, -1):
-        a, b = b, a + coeff(x) * b
-    return [a + start * b, b]
-
 def choose(n, m):
     if n == 0:
         return []
@@ -45,6 +38,7 @@ def choose(n, m):
     a = [[m - 1] + x for x in c]
     b = choose(n, m - 1)
     return a + b
+
 
 def to_list(n):
     l = []

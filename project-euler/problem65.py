@@ -1,8 +1,13 @@
-from maths import cont_fraction
+from cont_frac import eval_cont_frac
 from strings import sum_digits
 
+
 def c(n):
-    return (1 + n / 3) * 2 if n % 3 == 1 else 1
+    if n == 0:
+        return 2
+    if n % 3 == 2:
+        return (1 + n / 3) * 2
+    return 1
 
 
-print sum_digits(str(cont_fraction(100-1, 2, c)[0]))
+print sum_digits(str(eval_cont_frac(100 - 1, c)[0]))
